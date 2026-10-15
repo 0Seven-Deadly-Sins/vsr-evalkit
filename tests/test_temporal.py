@@ -1,7 +1,7 @@
 import pytest
 
 torch = pytest.importorskip("torch")
-from vsr_evalkit.errors import NotApplicable
+from vsr_evalkit.errors import EvaluationError, NotApplicable
 from vsr_evalkit.metrics.temporal import masked_warp_mse, resize_flow, sample_with_flow
 
 
@@ -41,3 +41,12 @@ def test_scale_flow_components_and_border():
     flow = torch.full((1, 2, 5, 7), 100.0)
     _, valid = sample_with_flow(image, flow)
     assert not valid.any()
+
+
+def test_nonfinite_flow_is_an_error_not_an_occlusion_mask():
+    image = torch.zeros(1, 3, 7, 9)
+    field = torch.zeros(1, 2, 7, 9)
+    bad = field.clone()
+    bad[0, 0, 3, 4] = float("nan")
+    with pytest.raises(EvaluationError, match="non-finite"):
+        masked_warp_mse(image, image, field, bad)

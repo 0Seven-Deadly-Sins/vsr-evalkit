@@ -8,7 +8,7 @@ All ten direct checkpoint/statistic URLs in the manifest responded HTTP 200 to H
 
 Windows CPU, Python 3.10.10, numpy 1.26.4, scipy 1.14.1, Pillow 11.1.0, PyYAML 6.0.2, PyAV 14.2.0, OpenCV-headless 4.11.0.86, torch 2.5.1+cpu, torchvision 0.20.1+cpu. No CUDA device was available.
 
-- `python -m pytest -q`: **44 passed** at the delivery validation gate; later CI and repository history record additional fixes/checks, if any.
+- `python -m pytest -q`: **46 passed** at the delivery validation gate; later CI and repository history record additional fixes/checks, if any.
 - Actual no-weight CLI synthetic run: completed; JSON/CSV/Markdown outputs generated, paired landscape and portrait clips, differing video lengths.
 - Classical formula and independent OpenCV valid-window comparisons, 1080p/4K identity, odd dimensions, color bars, crop boundaries and invalid inputs.
 - Lossless FFV1/MKV versus PNG frame equality, empty/corrupt/high-bit-depth inputs, sequence dimension changes, natural ordering, explicit mappings, frame IDs, FPS and alignment rejection.

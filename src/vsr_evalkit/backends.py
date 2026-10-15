@@ -158,6 +158,8 @@ class PyIQABackend:
 
 def fuse_dover(scores):
     # Bind names before fusion; model list order follows the input dictionary order.
+    if not all(np.isfinite(scores[key]) for key in ("aesthetic", "technical")):
+        raise EvaluationError("DOVER produced non-finite raw branch scores")
     a = (scores["aesthetic"] + 0.08285) / 0.03774
     t = (scores["technical"] - 0.1107) / 0.07355
     sigmoid = lambda x: float(1 / (1 + np.exp(-np.clip(x, -700, 700))))
@@ -269,6 +271,8 @@ class VQABackend:
                 "seed": seed,
             }
         raw = float(result.mean().item())
+        if not np.isfinite(raw):
+            raise EvaluationError(f"{self.name} produced a non-finite raw score")
         mean, std = {
             "fastvqa": (-0.110198185, 0.04178565),
             "fastervqa": (0.14759505, 0.03613452),

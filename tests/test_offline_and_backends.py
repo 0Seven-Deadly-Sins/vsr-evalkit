@@ -46,6 +46,12 @@ def test_dover_branch_names_not_list_positions():
     ] == pytest.approx(1 / (1 + np.exp(-0.6104)))
 
 
+def test_nonfinite_raw_dover_scores_do_not_become_finite_probabilities():
+    for value in (float("inf"), float("-inf"), float("nan")):
+        with pytest.raises(EvaluationError, match="non-finite"):
+            fuse_dover({"technical": value, "aesthetic": -0.08285})
+
+
 def test_perceptual_input_stays_rgb_and_zero_to_one():
     torch = pytest.importorskip("torch")
     backend = PyIQABackend.__new__(PyIQABackend)

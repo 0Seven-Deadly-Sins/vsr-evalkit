@@ -6,6 +6,7 @@ import pytest
 torch = pytest.importorskip("torch")
 from vsr_evalkit.backends import RAFTBackend, VQABackend
 from vsr_evalkit.config import Config
+from vsr_evalkit.errors import EvaluationError
 from vsr_evalkit.media import MediaInfo
 from vsr_evalkit.offline import LocalResolver
 
@@ -82,6 +83,9 @@ def test_distinct_fast_and_faster_calibration(name, mean):
     value, detail = backend.video(SampleSequence(), 12)
     assert value == pytest.approx(0.5)
     assert detail["sampled_indices"]["fragments"] == [0, 1, 2, 0]
+    backend.model = lambda views: torch.tensor(float("inf"))
+    with pytest.raises(EvaluationError, match="non-finite"):
+        backend.video(SampleSequence(), 12)
 
 
 def test_raft_input_scaling_and_odd_size_padding(config_path, tmp_path):

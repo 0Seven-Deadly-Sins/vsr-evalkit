@@ -3,7 +3,7 @@
 import torch
 import torch.nn.functional as F
 
-from ..errors import NotApplicable
+from ..errors import EvaluationError, NotApplicable
 
 
 def sample_with_flow(value, flow):
@@ -33,6 +33,8 @@ def resize_flow(flow, height, width):
 
 
 def masked_warp_mse(first, second, forward, backward, relative=0.01, absolute=0.5):
+    if not torch.isfinite(forward).all() or not torch.isfinite(backward).all():
+        raise EvaluationError("RAFT produced a non-finite flow field")
     if (
         first.shape != second.shape
         or forward.shape != backward.shape
