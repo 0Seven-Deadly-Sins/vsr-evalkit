@@ -1,0 +1,10 @@
+# Locally exercised dependency set, Python 3.10.10 / Windows CPU.
+numpy==1.26.4
+scipy==1.14.1
+Pillow==11.1.0
+PyYAML==6.0.2
+av==14.2.0
+pytest==8.3.5
+opencv-python-headless==4.11.0.86
+# CPU torch/torchvision installed separately from https://download.pytorch.org/whl/cpu
+# torch==2.5.1+cpu, torchvision==0.20.1+cpu

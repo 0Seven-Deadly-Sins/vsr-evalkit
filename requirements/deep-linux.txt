@@ -1,0 +1,7 @@
+# Install the appropriate torch/torchvision CUDA builds BEFORE this file.
+-e .[deep,test]
+timm==0.9.16
+decord==0.6.0
+scikit-video==1.1.11
+einops==0.8.1
+tqdm>=4.66,<5

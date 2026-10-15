@@ -1,0 +1,35 @@
+standard-rgb-v1: &standard
+  alignment: strict
+  temporal_alignment: strict
+  color_space: rgb
+  ssim_color_space: rgb
+  crop_border: 0
+  psnr_eps: 0.0
+  ssim_clip_negative_cs: false
+  ssim_round_values: false
+  flow_max_long_edge: null
+  raft_iterations: 20
+  occlusion_relative: 0.01
+  occlusion_absolute: 0.5
+  seed: 0
+  aggregation: video-macro
+  frame_sampling: all
+  frame_pairing: identity
+  vqa_sampling: upstream-fixed
+standard-y-v1:
+  <<: *standard
+  color_space: bt601-y
+  ssim_color_space: bt601-y
+flow-960-v1:
+  <<: *standard
+  flow_max_long_edge: 960
+dove-code-alignment-v1:
+  <<: *standard
+  alignment: top-left-common
+  temporal_alignment: truncate-common
+  frame_pairing: ordinal
+  ssim_color_space: yiq-y
+  psnr_eps: 0.00000001
+  ssim_clip_negative_cs: true
+  ssim_round_values: true
+  note: Disclosed DOVE alignment plus PyIQA 0.1.15.post2 RGB-PSNR/YIQ-SSIM defaults. Original DOVE did not pin PyIQA. No paper-table reproduction claim. Perceptual inputs remain RGB; upstream bugs are not reproduced.

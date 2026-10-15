@@ -1,0 +1,466 @@
+{
+  "dove": {
+    "repository": "zhengchen1999/DOVE",
+    "url": "https://github.com/zhengchen1999/DOVE",
+    "commit": "0cd4240442cb5d122839c279977142cb6d648987",
+    "commit_date": "2026-05-20T06:46:21Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "tiled",
+    "resolution_note": "README describes spatial tiles and temporal chunks; inference size support is conditional on those settings.",
+    "evidence_paths": [
+      "README.md",
+      "inference.sh",
+      "inference_script.py"
+    ],
+    "evaluation_candidates": [
+      "eval_metrics.py",
+      "finetune/scripts/eval_dover.py",
+      "finetune/scripts/eval_ewarp.py",
+      "finetune/scripts/eval_metrics.py",
+      "finetune/scripts/eval_vbench.py",
+      "finetune/utils/metric_utils.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "seedvr": {
+    "repository": "ByteDance-Seed/SeedVR",
+    "url": "https://github.com/ByteDance-Seed/SeedVR",
+    "commit": "e4de8c24441a67e1b7df56abea10645059bb1185",
+    "commit_date": "2026-01-27T06:02:23Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "native-adaptive",
+    "resolution_note": "README explicitly describes arbitrary-resolution restoration; SeedVR2 adds adaptive attention windows.",
+    "evidence_paths": [
+      "readme.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "flashvsr": {
+    "repository": "OpenImagingLab/FlashVSR",
+    "url": "https://github.com/OpenImagingLab/FlashVSR",
+    "commit": "683f75554d68f170fc503ca1b5e2cddd604cb5e0",
+    "commit_date": "2026-10-15T08:40:15Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "native-adaptive",
+    "resolution_note": "README describes high-resolution generalization using locality-constrained attention; primarily optimized for 4x.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "diffsynth/extensions/ImageQualityMetric/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/aesthetic.py",
+      "diffsynth/extensions/ImageQualityMetric/clip.py",
+      "diffsynth/extensions/ImageQualityMetric/config.py",
+      "diffsynth/extensions/ImageQualityMetric/hps.py",
+      "diffsynth/extensions/ImageQualityMetric/imagereward.py",
+      "diffsynth/extensions/ImageQualityMetric/mps.py",
+      "diffsynth/extensions/ImageQualityMetric/pickscore.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/base_model.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/clip_model.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/cross_modeling.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "star": {
+    "repository": "NJU-PCALab/STAR",
+    "url": "https://github.com/NJU-PCALab/STAR",
+    "commit": "69b8bc53e4bb04267265fa9a288ee30882c5b2ed",
+    "commit_date": "2025-07-02T08:31:22Z",
+    "default_branch": "main",
+    "license_api": "not_declared",
+    "resolution_class": "unverified",
+    "resolution_note": "Arbitrary-size behavior was not established by this source-code audit; no model inference is integrated.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "upscale_a_video": {
+    "repository": "sczhou/Upscale-A-Video",
+    "url": "https://github.com/sczhou/Upscale-A-Video",
+    "commit": "10ca1d751cad25b8ac0b9b0cab415a82d9df1ac6",
+    "commit_date": "2024-09-27T10:50:59Z",
+    "default_branch": "master",
+    "license_api": "NOASSERTION",
+    "resolution_class": "tiled",
+    "resolution_note": "Inference uses spatial/temporal processing; no claim that its evaluation protocol is resolution independent.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "mgld_vsr": {
+    "repository": "IanYeung/MGLD-VSR",
+    "url": "https://github.com/IanYeung/MGLD-VSR",
+    "commit": "74a34253619b863cf196de614a177972cad61bca",
+    "commit_date": "2025-12-02T10:55:01Z",
+    "default_branch": "main",
+    "license_api": "NOASSERTION",
+    "resolution_class": "tiled",
+    "resolution_note": "README explicitly says arbitrary-size testing with VAE chopping.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "basicsr/metrics/README.md",
+      "basicsr/metrics/README_CN.md",
+      "basicsr/metrics/__init__.py",
+      "basicsr/metrics/fid.py",
+      "basicsr/metrics/metric_util.py",
+      "basicsr/metrics/niqe.py",
+      "basicsr/metrics/psnr_ssim.py",
+      "basicsr/metrics/test_metrics/test_psnr_ssim.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "dloral": {
+    "repository": "yjsunnn/DLoRAL",
+    "url": "https://github.com/yjsunnn/DLoRAL",
+    "commit": "e8a5574124dd18d7d6ea71d6974bab6705f6e1f4",
+    "commit_date": "2026-03-09T14:48:27Z",
+    "default_branch": "main",
+    "license_api": "MIT",
+    "resolution_class": "tiled",
+    "resolution_note": "Inference exposes VAE tiled sizes and a process_size option; exact native-size behavior needs a model run.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "ram/utils/metrics.py",
+      "src/cross_frame_retrieval/cfr_main.py",
+      "src/cross_frame_retrieval/uncertainty_topk.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "realviformer": {
+    "repository": "Yuehan717/RealViformer",
+    "url": "https://github.com/Yuehan717/RealViformer",
+    "commit": "bd5f88d05ba62136727a61cb162da53f22560465",
+    "commit_date": "2024-07-22T01:34:46Z",
+    "default_branch": "main",
+    "license_api": "MIT",
+    "resolution_class": "unverified",
+    "resolution_note": "Testing code is public; arbitrary spatial dimensions were not runtime-validated.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "realbasicvsr": {
+    "repository": "ckkelvinchan/RealBasicVSR",
+    "url": "https://github.com/ckkelvinchan/RealBasicVSR",
+    "commit": "b908e08323c84e96b08f0d58621026ab27f56bcb",
+    "commit_date": "2022-04-18T03:54:16Z",
+    "default_branch": "master",
+    "license_api": "Apache-2.0",
+    "resolution_class": "unverified",
+    "resolution_note": "Testing code is public; independent evaluation is delegated to its framework dependencies.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "sparkvsr": {
+    "repository": "taco-group/SparkVSR",
+    "url": "https://github.com/taco-group/SparkVSR",
+    "commit": "a082284b80005bb5615c0f5f5f5ed66650b1b1e7",
+    "commit_date": "2026-08-03T04:15:32Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "tiled",
+    "resolution_note": "Inference exposes spatial tiling and temporal chunking; evaluation has a unified script.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "ComfyUI-Spark/sparkvsr_wrapper/pisasr_src/pisasr_eval.py",
+      "finetune/scripts/eval_all_metrics.py",
+      "finetune/utils/metric_utils.py",
+      "run_eval_all.sh"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "quantvsr": {
+    "repository": "bowenchai/QuantVSR",
+    "url": "https://github.com/bowenchai/QuantVSR",
+    "commit": "b3c69a2e2bb3e3f1536515c7616bdfccbd99033f",
+    "commit_date": "2026-01-29T02:52:46Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "tiled",
+    "resolution_note": "MGLD-derived inference; benchmark scripts include separate image, DOVER and RAFT evaluation.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "benchmarks/DOVER/dover/models/evaluator.py",
+      "benchmarks/DOVER/dover_evaluator.py",
+      "benchmarks/DOVER/evaluate_a_set_of_videos.py",
+      "benchmarks/DOVER/evaluate_one_video.py",
+      "benchmarks/RAFT/evaluate.py",
+      "benchmarks/RAFT/ewarp.py",
+      "benchmarks/RAFT/warp_utils.py",
+      "benchmarks/eval_dover.py",
+      "benchmarks/eval_ewarp.py",
+      "benchmarks/eval_metrics.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/README.md",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/README_CN.md",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/__init__.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/fid.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/metric_util.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/niqe.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/psnr_ssim.py",
+      "src/quantvsr/models/mgldvsr/basicsr/metrics/test_metrics/test_psnr_ssim.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "stcdit": {
+    "repository": "JyChen9811/STCDiT",
+    "url": "https://github.com/JyChen9811/STCDiT",
+    "commit": "7c4be6e2774b1bdf51658d1e495a0a3a3ace3772",
+    "commit_date": "2026-06-04T10:28:18Z",
+    "default_branch": "main",
+    "license_api": "not_declared",
+    "resolution_class": "unverified",
+    "resolution_note": "Filename candidates include generic image rewards, not an independently verified VSR benchmark entry point.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "diffsynth/extensions/ImageQualityMetric/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/aesthetic.py",
+      "diffsynth/extensions/ImageQualityMetric/clip.py",
+      "diffsynth/extensions/ImageQualityMetric/config.py",
+      "diffsynth/extensions/ImageQualityMetric/hps.py",
+      "diffsynth/extensions/ImageQualityMetric/imagereward.py",
+      "diffsynth/extensions/ImageQualityMetric/mps.py",
+      "diffsynth/extensions/ImageQualityMetric/pickscore.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/__init__.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/base_model.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/clip_model.py",
+      "diffsynth/extensions/ImageQualityMetric/trainer/models/cross_modeling.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "duo_vsr": {
+    "repository": "cszy98/DUO-VSR",
+    "url": "https://github.com/cszy98/DUO-VSR",
+    "commit": "d0042b00105b015f3c13b3086777e1f769e8ef12",
+    "commit_date": "2026-03-23T17:00:24Z",
+    "default_branch": "master",
+    "license_api": "not_declared",
+    "resolution_class": "unverified",
+    "resolution_note": "No standalone metric entry point was found in filename candidates.",
+    "evidence_paths": [],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "stream_diffvsr": {
+    "repository": "jamichss/Stream-DiffVSR",
+    "url": "https://github.com/jamichss/Stream-DiffVSR",
+    "commit": "f18b9e481436afd1ac286faf88709bc27834f37b",
+    "commit_date": "2026-10-03T11:45:51Z",
+    "default_branch": "main",
+    "license_api": "Apache-2.0",
+    "resolution_class": "unverified",
+    "resolution_note": "Streaming inference is distinct from arbitrary spatial-resolution support; no standalone metric entry point found.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "diffvsr": {
+    "repository": "xh9998/DiffVSR",
+    "url": "https://github.com/xh9998/DiffVSR",
+    "commit": "3b2b99881930e0b39358430ad93bdcd273b43047",
+    "commit_date": "2025-10-15T20:35:57Z",
+    "default_branch": "master",
+    "license_api": "not_declared",
+    "resolution_class": "tiled",
+    "resolution_note": "README exposes tile_size and tile_overlap for memory-limited inference.",
+    "evidence_paths": [
+      "README.md",
+      "inference.sh",
+      "inference_tile.py"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "venhancer": {
+    "repository": "Vchitect/VEnhancer",
+    "url": "https://github.com/Vchitect/VEnhancer",
+    "commit": "80ffaa33988c583b129b730ce9d559b114de2d8c",
+    "commit_date": "2024-09-16T13:48:02Z",
+    "default_branch": "main",
+    "license_api": "not_declared",
+    "resolution_class": "target-size-adjusted",
+    "resolution_note": "Inference adjusts target resolution and can interpolate frames; strict frame pairing requires SR-only outputs.",
+    "evidence_paths": [
+      "README.md",
+      "enhance_a_video.py"
+    ],
+    "evaluation_candidates": [],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "basicsr": {
+    "repository": "XPixelGroup/BasicSR",
+    "url": "https://github.com/XPixelGroup/BasicSR",
+    "commit": "8d56e3a045f9fb3e1d8872f92ee4a4f07f886b0a",
+    "commit_date": "2024-05-17T07:34:46Z",
+    "default_branch": "master",
+    "license_api": "Apache-2.0",
+    "resolution_class": "metric-library",
+    "resolution_note": "Classical PSNR/SSIM reference; valid-window SSIM and explicit luminance conversion.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "basicsr/metrics/README.md",
+      "basicsr/metrics/README_CN.md",
+      "basicsr/metrics/__init__.py",
+      "basicsr/metrics/fid.py",
+      "basicsr/metrics/metric_util.py",
+      "basicsr/metrics/niqe.py",
+      "basicsr/metrics/psnr_ssim.py",
+      "basicsr/metrics/test_metrics/test_psnr_ssim.py",
+      "docs/Metrics.md",
+      "docs/Metrics_CN.md",
+      "scripts/metrics/calculate_fid_folder.py",
+      "scripts/metrics/calculate_fid_stats_from_datasets.py",
+      "scripts/metrics/calculate_lpips.py",
+      "scripts/metrics/calculate_niqe.py",
+      "scripts/metrics/calculate_psnr_ssim.py",
+      "scripts/metrics/calculate_stylegan2_fid.py",
+      "tests/test_metrics/test_psnr_ssim.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "pyiqa": {
+    "repository": "chaofengc/IQA-PyTorch",
+    "url": "https://github.com/chaofengc/IQA-PyTorch",
+    "commit": "3186bdc75cb35871690fe8ebdceb70a7e19f3301",
+    "commit_date": "2026-10-15T06:57:38Z",
+    "default_branch": "main",
+    "license_api": "NOASSERTION",
+    "resolution_class": "metric-library",
+    "resolution_note": "Image metrics have individual preprocessing and implicit artifact requirements; package adapter separately pins PyPI 0.1.15.post2.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "pyiqa/metrics/__init__.py",
+      "pyiqa/metrics/correlation_coefficient.py",
+      "pyiqa/metrics/other_metrics.py",
+      "tests/test_metric_general.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "dover": {
+    "repository": "VQAssessment/DOVER",
+    "url": "https://github.com/VQAssessment/DOVER",
+    "commit": "f1ddc96215bc7fbcf8f315c65d47905f339c3419",
+    "commit_date": "2024-08-12T14:19:34Z",
+    "default_branch": "master",
+    "license_api": "NOASSERTION",
+    "resolution_class": "official-view-sampling",
+    "resolution_note": "Technical fragments and aesthetic resize are intrinsic to DOVER, not a global evaluator resize.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "dover/models/evaluator.py",
+      "evaluate_a_set_of_videos.py",
+      "evaluate_one_video.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "fastvqa": {
+    "repository": "VQAssessment/FAST-VQA-and-FasterVQA",
+    "url": "https://github.com/VQAssessment/FAST-VQA-and-FasterVQA",
+    "commit": "8db452e2caa5d5d4da507bcf577c19b8114f2ebd",
+    "commit_date": "2024-08-12T14:19:08Z",
+    "default_branch": "dev",
+    "license_api": "NOASSERTION",
+    "resolution_class": "official-view-sampling",
+    "resolution_note": "FAST-VQA and FasterVQA use distinct checkpoints/configurations and calibration constants.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "fastvqa/models/.ipynb_checkpoints/evaluator-checkpoint.py",
+      "fastvqa/models/evaluator.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  },
+  "raft": {
+    "repository": "princeton-vl/RAFT",
+    "url": "https://github.com/princeton-vl/RAFT",
+    "commit": "2888e15a51fa41140771d3f498ed8023cff098d1",
+    "commit_date": "2025-08-24T23:34:28Z",
+    "default_branch": "master",
+    "license_api": "BSD-3-Clause",
+    "resolution_class": "flow-backend",
+    "resolution_note": "Original RAFT expects 0..255 inputs and internally normalizes; pad/unpad to multiples of eight.",
+    "evidence_paths": [
+      "README.md"
+    ],
+    "evaluation_candidates": [
+      "evaluate.py"
+    ],
+    "audit_date": "2026-10-15",
+    "runtime_model_validation": "not_performed",
+    "note": "Filename candidates require semantic inspection; absent candidates do not prove absence of embedded evaluation logic."
+  }
+}

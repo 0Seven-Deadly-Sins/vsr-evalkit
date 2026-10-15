@@ -1,0 +1,55 @@
+version: 1
+# Copy to eval.local.yaml at the repository root; paths are relative to that file.
+models:
+  dove:
+    pred_root: /data/vsr/results/dove/{dataset}
+  seedvr2:
+    pred_root: /data/vsr/results/seedvr2/{dataset}
+  flashvsr:
+    pred_root: /data/vsr/results/flashvsr/{dataset}
+
+datasets:
+  udm10:
+    gt_root: /data/vsr/UDM10/GT
+  spmcs:
+    gt_root: /data/vsr/SPMCS/GT
+  youhq40:
+    gt_root: /data/vsr/YouHQ40/GT
+  reds4:
+    gt_root: /data/vsr/REDS4/GT
+  vid4:
+    gt_root: /data/vsr/Vid4/GT
+  realvsr:
+    gt_root: /data/vsr/RealVSR/GT
+  mvsr4x:
+    gt_root: /data/vsr/MVSR4x/GT
+  videolq: {}
+
+# auto = paired: all 11; unpaired: 7 NR/video/temporal metrics.
+# For a first run without weights: metrics: [psnr, ssim]
+metrics: auto
+protocol: standard-rgb-v1
+runtime:
+  device: cuda
+  threads: 4
+output_root: runs
+
+# Sources are code checkouts only. See docs/WEIGHTS.md for exact commits.
+sources:
+  dover: third_party/DOVER
+  fastvqa: third_party/FAST-VQA-and-FasterVQA
+  raft: third_party/RAFT
+
+# Every file below is supplied manually; no download command is run by the toolkit.
+weights:
+  alexnet: weights/alexnet-owt-7be5be79.pth
+  lpips_alex: weights/LPIPS_v0.1_alex-df73285e.pth
+  vgg16: weights/vgg16-397923af.pth
+  dists: weights/DISTS_weights-f5e65c96.pth
+  niqe_params: weights/niqe_modelparameters.mat
+  musiq_koniq: weights/musiq_koniq_ckpt-e95806b9.pth
+  clip_rn50: weights/RN50.pt
+  dover: weights/DOVER.pth
+  fastvqa: weights/FAST_VQA_B_1_4.pth
+  fastervqa: weights/FAST_VQA_3D_1_1.pth
+  raft_things: weights/raft-things.pth
