@@ -1,5 +1,7 @@
 # Validation record
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](VALIDATION_ZH.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](VALIDATION.md)
+
 Date: 2026-10-15. No evaluation checkpoints, backbone weights, NIQE statistics or datasets were downloaded. PyTorch/torchvision and code-only PyIQA were installed as software dependencies. Synthetic image/video fixtures are created in temporary directories and are not distributed as model outputs.
 
 All ten direct checkpoint/statistic URLs in the manifest responded HTTP 200 to HEAD-only metadata checks. RAFT is linked to its official download instructions. No response bodies or model files were retrieved; availability checks are not checkpoint numerical verification.

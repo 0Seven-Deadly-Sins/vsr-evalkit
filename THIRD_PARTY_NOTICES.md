@@ -1,5 +1,7 @@
 # Third-party sources, licenses and citations
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](THIRD_PARTY_NOTICES_ZH.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](THIRD_PARTY_NOTICES.md)
+
 Original toolkit code is distributed under Apache-2.0 (LICENSE). No pretrained weights, evaluation datasets, restoration model code, or unlicensed upstream evaluator files are redistributed. Optional dependencies, manually installed source checkouts and their model artifacts retain their own terms; the toolkit's license does not replace those terms.
 
 | Source | Use here | Upstream terms observed |

@@ -1,5 +1,7 @@
 # Dataset configuration notes
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](DATASETS_ZH.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](DATASETS.md)
+
 The eight IDs in `examples/eval.yaml` are configuration examples, not embedded dataset loaders or a claim that all distributions with those names are identical. No datasets are downloaded. Any additional dataset can be registered by paths and an optional mapping CSV.
 
 | Example ID | GT configuration | Source/protocol caveat |

@@ -1,5 +1,7 @@
 # 源码审计与差异记录
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](AUDIT.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](AUDIT_EN.md)
+
 审计日期：2026-10-15。源码、固定 commit 与许可信息见 [SURVEY](SURVEY.md)。以下结论来自代码路径和无权重合成测试；没有推断这些问题对论文表格或排名的实际影响。
 
 ## DOVE：全参考指标共用 Y 开关

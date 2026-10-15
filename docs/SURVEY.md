@@ -1,4 +1,6 @@
-# Source inventory / 源码调研表
+# Source inventory and evaluation survey
+
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](SURVEY_ZH.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](SURVEY.md)
 
 Audit date: 2026-10-15. Every link below pins a commit. Resolution classifications describe upstream inference, not a measured capability of that model on this machine. This toolkit evaluates existing outputs. No model weights or datasets were downloaded.
 

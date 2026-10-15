@@ -1,4 +1,6 @@
-# 手动配置环境与权重 / Offline setup
+# 手动配置环境与权重
+
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](WEIGHTS.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](WEIGHTS_EN.md)
 
 本工具不下载权重。`vsr-eval weights info` 输出完整机器可读清单（位于 `src/vsr_evalkit/resources/weights.json`），包括隐式骨干。模型构造前检查文件存在且非空；运行时计算 SHA-256，并核对已知完整哈希或官方文件名中的哈希前缀。未知隐式下载请求会明确失败，不使用随机权重替代。
 

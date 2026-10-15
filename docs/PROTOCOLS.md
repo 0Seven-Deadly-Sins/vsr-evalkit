@@ -1,5 +1,7 @@
 # Evaluation protocols
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](PROTOCOLS_ZH.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](PROTOCOLS.md)
+
 ## Classical image metrics
 
 Inputs are decoded 8-bit RGB and normalized to [0,1]. Default calculations retain float64. PSNR = −10 log10(mean((P−G)²)); zero error returns +∞. The default adds no epsilon. A preset may explicitly add `psnr_eps` to the normalized MSE.

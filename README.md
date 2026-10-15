@@ -1,5 +1,7 @@
 # vsr-evalkit
 
+[![简体中文](https://img.shields.io/badge/Language-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-blue?style=for-the-badge)](README.md) [![English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README_EN.md)
+
 独立评价已经生成的 Video Super-Resolution 结果。模型、数据集、指标与评价协议分开配置；无需安装 DOVE、SeedVR2 等 VSR 模型代码。
 
 ```bash
@@ -99,7 +101,7 @@ vsr-eval run --model dove --dataset udm10 --protocol flow-960-v1
 
 原尺寸 RAFT 在 4K 上可能耗尽显存，默认不会自动降低分辨率。`flow-960-v1` 只限制光流估计长边，并正确恢复光流向量；误差仍在原尺寸图像上计算，协议标识不同。DOVER 等自身定义的视图采样照常执行。跨视频可使用任意长宽尺寸，单个序列内部尺寸需固定。
 
-`dove-code-alignment-v1` 提供 DOVE 已公开的对齐方式及指定 PyIQA 版本的默认口径。DOVE 原项目未固定 PyIQA 版本，因此此预设不能承诺重现论文表格，也不复现已发现的错误。完整公式、预设差异和短视频规则见 [PROTOCOLS.md](docs/PROTOCOLS.md)。
+`dove-code-alignment-v1` 提供 DOVE 已公开的对齐方式及指定 PyIQA 版本的默认口径。DOVE 原项目未固定 PyIQA 版本，因此此预设不能承诺重现论文表格，也不复现已发现的错误。完整公式、预设差异和短视频规则见 [PROTOCOLS.md](docs/PROTOCOLS_ZH.md)。
 
 ## 输出与失败处理
 
@@ -111,12 +113,12 @@ vsr-eval run --model dove --dataset udm10 --protocol flow-960-v1
 
 ## 调研、正确性与验证状态
 
-- [21 个固定源码的调研与整合决策](docs/SURVEY.md)
+- [21 个固定源码的调研与整合决策](docs/SURVEY_ZH.md)
 - [已确认的问题、协议差异和证据](docs/AUDIT.md)
 - [权重来源及另一台机器的环境配置](docs/WEIGHTS.md)
-- [数据集版本、配对及配置说明](docs/DATASETS.md)
-- [已执行与待执行的验证](docs/VALIDATION.md)
-- [第三方许可证与引用](THIRD_PARTY_NOTICES.md)
+- [数据集版本、配对及配置说明](docs/DATASETS_ZH.md)
+- [已执行与待执行的验证](docs/VALIDATION_ZH.md)
+- [第三方许可证与引用](THIRD_PARTY_NOTICES_ZH.md)
 
 ```bash
 python -m pip install -e '.[test]'
