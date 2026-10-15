@@ -26,8 +26,6 @@ Audit date: 2026-10-15. Every link below pins a commit. Resolution classificatio
 | fastvqa | [VQAssessment/FAST-VQA-and-FasterVQA@8db452e2caa5](https://github.com/VQAssessment/FAST-VQA-and-FasterVQA/tree/8db452e2caa5d5d4da507bcf577c19b8114f2ebd) | **official-view-sampling**: FAST-VQA and FasterVQA use distinct checkpoints/configurations and calibration constants. [README/code](https://github.com/VQAssessment/FAST-VQA-and-FasterVQA/blob/8db452e2caa5d5d4da507bcf577c19b8114f2ebd/README.md) | [fastvqa/models/.ipynb_checkpoints/evaluator-checkpoint.py](https://github.com/VQAssessment/FAST-VQA-and-FasterVQA/blob/8db452e2caa5d5d4da507bcf577c19b8114f2ebd/fastvqa/models/.ipynb_checkpoints/evaluator-checkpoint.py)<br>[fastvqa/models/evaluator.py](https://github.com/VQAssessment/FAST-VQA-and-FasterVQA/blob/8db452e2caa5d5d4da507bcf577c19b8114f2ebd/fastvqa/models/evaluator.py) | NOASSERTION |
 | raft | [princeton-vl/RAFT@2888e15a51fa](https://github.com/princeton-vl/RAFT/tree/2888e15a51fa41140771d3f498ed8023cff098d1) | **flow-backend**: Original RAFT expects 0..255 inputs and internally normalizes; pad/unpad to multiples of eight. [README/code](https://github.com/princeton-vl/RAFT/blob/2888e15a51fa41140771d3f498ed8023cff098d1/README.md) | [evaluate.py](https://github.com/princeton-vl/RAFT/blob/2888e15a51fa41140771d3f498ed8023cff098d1/evaluate.py) | BSD-3-Clause |
 
-## Integration decisions
-
 ## Evaluation protocol coverage / 评价入口覆盖
 
 This is a source-code availability audit. The rows below describe inspected public entry points; unknown fields are deliberately not filled from assumed paper-table conventions. An output-path registration supports evaluating a model's results even when its original paper protocol is unavailable.

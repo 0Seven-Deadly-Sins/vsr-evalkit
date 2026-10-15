@@ -15,6 +15,8 @@ python -m pip install -r requirements/deep-linux.txt
 
 `pyiqa==0.1.15.post2`、`timm==0.9.16` 被固定；不可随意换成 latest 后继续混用旧结果。decord/skvideo 是上游导入依赖，本工具统一以 PyAV 解码。只算 PSNR/SSIM 不需安装以上深度环境。Linux/CUDA 仍需用户机器上的真实权重验证，不能将 CPU 测试当作 GPU 测试。
 
+基础包固定 `av==14.2.0`，该版本提供目标 Python/Linux/Windows wheel；14.3/14.4 的源码包会触发额外 FFmpeg 编译，因此不进入默认环境。
+
 ## 指标源码
 
 ```bash
