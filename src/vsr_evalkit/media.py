@@ -79,6 +79,10 @@ class Sequence:
                     "colorspace": str(stream.codec_context.colorspace),
                     "color_primaries": str(stream.codec_context.color_primaries),
                     "color_trc": str(stream.codec_context.color_trc),
+                    "nominal_fps": float(stream.average_rate)
+                    if stream.average_rate
+                    else None,
+                    "time_base": float(stream.time_base) if stream.time_base else 0.0,
                     "decoder": "PyAV/FFmpeg rgb24",
                 }
                 for frame in container.decode(stream):
@@ -121,16 +125,22 @@ class Sequence:
             if count == 0:
                 raise EvaluationError(f"Empty or unreadable sequence: {self.path}")
             fps = self.fps
+            nominal_fps = color.get("nominal_fps")
+            if fps is None and nominal_fps:
+                fps = nominal_fps
             valid_pts = all(t is not None for t in times)
             if valid_pts and count > 1:
                 deltas = np.diff(times)
+                decoded_fps = nominal_fps or float(1.0 / np.mean(deltas))
+                elapsed = np.asarray(times) - times[0]
+                expected = np.arange(count) / decoded_fps
+                tolerance = max(float(color.get("time_base", 0.0)) * 1.01, 1e-5)
                 if np.any(deltas <= 0) or not np.allclose(
-                    deltas, deltas[0], atol=1e-5, rtol=1e-4
+                    elapsed, expected, atol=tolerance, rtol=0
                 ):
                     raise EvaluationError(
                         f"Nonuniform/nonmonotonic timestamps (VFR unsupported): {self.path}"
                     )
-                decoded_fps = float(1.0 / np.mean(deltas))
                 if fps is not None and not np.isclose(fps, decoded_fps, rtol=1e-3):
                     raise EvaluationError(
                         f"Configured FPS disagrees with timestamps: {self.path}"
@@ -286,7 +296,10 @@ def alignment(pred, reference, protocol):
             # Compare elapsed time, preserving valid container start offsets separately.
             pt = np.array(p.timestamps[:count]) - p.timestamps[0]
             gt = np.array(g.timestamps[:count]) - g.timestamps[0]
-            if not np.allclose(pt, gt, atol=1e-4, rtol=1e-4):
+            tolerance = max(
+                1e-4, p.color.get("time_base", 0.0) + g.color.get("time_base", 0.0)
+            )
+            if not np.allclose(pt, gt, atol=tolerance, rtol=0):
                 raise EvaluationError(
                     "Prediction and reference presentation timelines differ"
                 )

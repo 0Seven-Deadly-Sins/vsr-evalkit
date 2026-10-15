@@ -1,3 +1,5 @@
+from fractions import Fraction
+
 import numpy as np
 import pytest
 from PIL import Image
@@ -62,7 +64,8 @@ def test_empty_corrupt_and_high_bit_depth(tmp_path):
         Sequence(high).info
 
 
-def test_lossless_video_matches_frames(frames, tmp_path):
+@pytest.mark.parametrize("rate", [25, 16, Fraction(30000, 1001)])
+def test_lossless_video_matches_frames(frames, tmp_path, rate):
     import av
 
     rng = np.random.default_rng(8)
@@ -70,7 +73,7 @@ def test_lossless_video_matches_frames(frames, tmp_path):
     folder = frames("sequence", arrays)
     video = tmp_path / "sequence.mkv"
     with av.open(str(video), "w") as container:
-        stream = container.add_stream("ffv1", rate=25)
+        stream = container.add_stream("ffv1", rate=rate)
         stream.width = 23
         stream.height = 17
         stream.pix_fmt = "bgr0"
@@ -82,9 +85,24 @@ def test_lossless_video_matches_frames(frames, tmp_path):
         for packet in stream.encode():
             container.mux(packet)
     decoded = Sequence(video)
-    assert decoded.info.frames == 3 and decoded.info.fps == pytest.approx(25)
+    assert decoded.info.frames == 3 and decoded.info.fps == pytest.approx(float(rate))
     for a, b in zip(Sequence(folder), decoded):
         np.testing.assert_array_equal(a, b)
+
+
+def test_actual_irregular_pts_are_rejected(tmp_path):
+    sequence = Sequence.__new__(Sequence)
+    sequence.path = tmp_path / "irregular.mkv"
+    sequence.fps = None
+    sequence._info = None
+    sequence.image_paths = None
+    frame = np.zeros((17, 23, 3), np.uint8)
+    sequence._decode = lambda: iter(
+        (frame, time, {"nominal_fps": 25.0, "time_base": 0.001})
+        for time in [0.0, 0.04, 0.11]
+    )
+    with pytest.raises(EvaluationError, match="VFR unsupported"):
+        sequence.info
 
 
 def test_dimensions_changing_inside_sequence_fail(frames):

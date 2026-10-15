@@ -8,10 +8,10 @@ All ten direct checkpoint/statistic URLs in the manifest responded HTTP 200 to H
 
 Windows CPU, Python 3.10.10, numpy 1.26.4, scipy 1.14.1, Pillow 11.1.0, PyYAML 6.0.2, PyAV 14.2.0, OpenCV-headless 4.11.0.86, torch 2.5.1+cpu, torchvision 0.20.1+cpu. No CUDA device was available.
 
-- `python -m pytest -q`: **46 passed** at the delivery validation gate; later CI and repository history record additional fixes/checks, if any.
+- `python -m pytest -q`: **49 passed** at the delivery validation gate; later CI and repository history record additional fixes/checks, if any.
 - Actual no-weight CLI synthetic run: completed; JSON/CSV/Markdown outputs generated, paired landscape and portrait clips, differing video lengths.
 - Classical formula and independent OpenCV valid-window comparisons, 1080p/4K identity, odd dimensions, color bars, crop boundaries and invalid inputs.
-- Lossless FFV1/MKV versus PNG frame equality, empty/corrupt/high-bit-depth inputs, sequence dimension changes, natural ordering, explicit mappings, frame IDs, FPS and alignment rejection.
+- Lossless FFV1/MKV versus PNG frame equality at 25, 16 and 30000/1001 FPS, container timestamp quantization, actual irregular-PTS rejection, empty/corrupt/high-bit-depth inputs, sequence dimension changes, natural ordering, explicit mappings, frame IDs, FPS and alignment rejection.
 - Macro aggregation, no early rounding, valid JSON infinity, incomplete-coverage suppression, distinct protocol IDs and refusal to overwrite outputs.
 - Known translation flow direction, in-bounds regions, occlusion, RGB denominator, zero-valid-pixel handling, flow-vector restoration and original RAFT 0..255 caller range with odd-size pad/unpad.
 - Socket denial, local artifact lookup, imported torchvision download aliases, missing implicit backbones, RGB perceptual inputs, DOVER name-based fusion and FAST/Faster calibration contracts.
