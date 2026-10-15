@@ -2,6 +2,8 @@
 
 Date: 2026-10-15. No evaluation checkpoints, backbone weights, NIQE statistics or datasets were downloaded. PyTorch/torchvision and code-only PyIQA were installed as software dependencies. Synthetic image/video fixtures are created in temporary directories and are not distributed as model outputs.
 
+All ten direct checkpoint/statistic URLs in the manifest responded HTTP 200 to HEAD-only metadata checks. RAFT is linked to its official download instructions. No response bodies or model files were retrieved; availability checks are not checkpoint numerical verification.
+
 ## Executed locally
 
 Windows CPU, Python 3.10.10, numpy 1.26.4, scipy 1.14.1, Pillow 11.1.0, PyYAML 6.0.2, PyAV 14.2.0, OpenCV-headless 4.11.0.86, torch 2.5.1+cpu, torchvision 0.20.1+cpu. No CUDA device was available.

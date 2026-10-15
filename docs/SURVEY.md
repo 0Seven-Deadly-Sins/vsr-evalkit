@@ -28,6 +28,25 @@ Audit date: 2026-10-15. Every link below pins a commit. Resolution classificatio
 
 ## Integration decisions
 
+## Evaluation protocol coverage / 评价入口覆盖
+
+This is a source-code availability audit. The rows below describe inspected public entry points; unknown fields are deliberately not filled from assumed paper-table conventions. An output-path registration supports evaluating a model's results even when its original paper protocol is unavailable.
+
+| Work / entry family | Metrics established by inspected entry | Preprocessing and aggregation established here | Parameter source / status |
+|---|---|---|---|
+| DOVE root evaluator | PSNR, SSIM, LPIPS, DISTS, CLIP-IQA; other PyIQA names accepted | Common frame prefix and common spatial crop; global Y switch affects all FR; frame mean then video macro, with intermediate rounding | PyIQA plus implicit torchvision/CLIP artifacts; video wrappers additionally depend on external code. See AUDIT. |
+| SparkVSR unified evaluator | PSNR, SSIM, LPIPS, DISTS, CLIP-IQA, NIQE, MUSIQ; DOVER, warping, VBench and a FasterVQA path labelled fastvqa | Common frame prefix/center crop and model-specific wrappers; exact paper-table parity was not verified | PyIQA and separately installed DOVER/RAFT/VQA/VBench; see the fixed candidate link and AUDIT. |
+| QuantVSR benchmark wrappers | Image metric wrapper, DOVER wrapper and RAFT warping are present | RAFT caller downsamples images by 1/2 and passes 0..1 to an internally normalizing RAFT; raw error multiplied by 1000. Exact other wrapper settings not used as toolkit defaults | Original RAFT Things plus referenced metric packages; interface mismatch audited. |
+| MGLD-VSR embedded BasicSR | Classical PSNR/SSIM, NIQE and FID implementations present | Library formulas are inspectable; active validation YAML, sample population and paper aggregation were not runtime-verified | BasicSR statistic/model dependencies; source presence alone is not a verified paper preset. |
+| SeedVR / SeedVR2, STAR, Upscale-A-Video, DLoRAL | No independently verified VSR evaluator entry from this audit | Paper protocol not inferred from model inference settings | Evaluate generic outputs; no original table-reproduction claim. |
+| RealViformer, RealBasicVSR | Public inference code; no separately verified complete evaluator here | Framework/degradation/split conventions require separate verification | Generic paired/unpaired output evaluation. |
+| FlashVSR, STCDiT | Generic ImageQualityMetric reward modules appear in source candidates | Those reward modules are not treated as a released VSR benchmark evaluator | Generic output evaluation, not a claim that those rewards reproduce reported metrics. |
+| DUO-VSR, Stream-DiffVSR, DiffVSR, VEnhancer | No complete independent benchmark entry verified here | Size/streaming/inference options do not establish metric color, border, sampler or aggregation rules | Generic outputs; VEnhancer frame interpolation must not be silently aligned to SR GT. |
+| BasicSR / PyIQA | Classical and image-quality reference implementations | Individual color, epsilon, rounding, SSIM-CS and learned preprocessing differences inspected | Fixed package/version and complete artifact manifest; PROTOCOLS and WEIGHTS define toolkit choices. |
+| DOVER / FAST-VQA / FasterVQA / RAFT | Official model and preprocessing APIs inspected | Actual upstream VQA samplers/views exercised without weights; RAFT caller range/flow math tested with simulated flow | Commit-pinned source plus manual official model files; pretrained numerical validation remains pending. |
+
+### Integration decisions
+
 - DOVE, SparkVSR and QuantVSR wrappers are audited for input handling and result association, rather than copied wholesale.
 - BasicSR is an independent differential reference for classical formulas. PyIQA supplies the five non-classical image metrics; original metric repositories remain attribution sources.
 - DOVER, FAST-VQA/FasterVQA and RAFT use manually installed, commit-pinned source checkouts. Their model inference runs under the network guard.

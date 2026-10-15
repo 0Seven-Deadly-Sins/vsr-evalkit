@@ -1,6 +1,10 @@
 name: no-weight-tests
 on:
   push:
+    paths-ignore:
+      - 'docs/**'
+      - '*.md'
+      - 'LICENSE'
   pull_request:
   workflow_dispatch:
 jobs:
