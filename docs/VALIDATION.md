@@ -58,7 +58,9 @@ python scripts/verify_vqa_contracts.py --cache reference-cache/vqa --fetch --out
 
 ## Clean installation and Linux CI
 
-The `no-weight-tests` GitHub Actions workflow tests Python 3.10 and 3.11 on Ubuntu CPU, installs no pretrained artifacts, and executes the test suite plus a generated CLI example. See the repository Actions page for actual run results; a configured workflow is not itself evidence of a passing run. The delivery process also checks a fresh local checkout and base installation without PyTorch.
+The `no-weight-tests` GitHub Actions workflow tests Python 3.10 and 3.11 on Ubuntu CPU, installs no pretrained artifacts, and executes the test suite plus a generated CLI example. [Verified run 38714936098](https://github.com/0Seven-Deadly-Sins/vsr-evalkit/actions/runs/38714936098) passed both jobs against implementation commit `bcf2918f25807732dd91ca70c13192d522eea551`, including all 49 tests per Python version, CLI listing and a complete synthetic evaluation. Documentation-only updates after that commit do not alter the tested implementation.
+
+A fresh local Git checkout was built and installed as a regular wheel into a separate Python 3.10 environment containing **no PyTorch**. `pip check`, resource loading (11 artifact definitions / 21 source pins), `doctor`, and the complete synthetic PSNR/SSIM CLI evaluation passed. This checks that the core package and its resources do not accidentally depend on the development checkout or optional deep packages.
 
 ## Pending (not claimed)
 
