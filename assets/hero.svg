@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="54" y1="22" x2="1192" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#111A32"/><stop offset="1" stop-color="#090E1C"/></linearGradient>
+    <linearGradient id="accent" x1="84" y1="84" x2="602" y2="365" gradientUnits="userSpaceOnUse"><stop stop-color="#66E3D0"/><stop offset="1" stop-color="#8C7CFF"/></linearGradient>
+    <linearGradient id="frameA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#74E4D2"/><stop offset="1" stop-color="#267E9B"/></linearGradient>
+    <linearGradient id="frameB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B6A3FF"/><stop offset="1" stop-color="#564EA8"/></linearGradient>
+    <linearGradient id="frameC" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC47A"/><stop offset="1" stop-color="#B36379"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 282 -430 0 1058 80)" gradientUnits="userSpaceOnUse"><stop stop-color="#6559C7" stop-opacity=".27"/><stop offset="1" stop-color="#6559C7" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#AAB8D8" stroke-opacity=".055"/></pattern>
+  </defs>
+  <rect width="1280" height="420" rx="28" fill="url(#bg)"/><rect width="1280" height="420" rx="28" fill="url(#glow)"/><rect width="1280" height="420" rx="28" fill="url(#grid)"/>
+  <path d="M0 28A28 28 0 0 1 28 0h1224a28 28 0 0 1 28 28v4H0v-4Z" fill="url(#accent)" opacity=".9"/>
+  <circle cx="1058" cy="210" r="174" stroke="#8D9BC4" stroke-opacity=".1"/><circle cx="1058" cy="210" r="133" stroke="#8D9BC4" stroke-opacity=".1" stroke-dasharray="3 8"/>
+  <rect x="64" y="62" width="257" height="30" rx="15" fill="#17233B" stroke="#324466"/><circle cx="81" cy="77" r="4" fill="#66E3D0"/>
+  <text x="95" y="82" fill="#B9C6E2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.45">PROTOCOL-EXPLICIT VSR EVALUATION</text>
+  <text x="62" y="163" fill="#F5F7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="56" font-weight="800" letter-spacing="-2.4">VSR EVALKIT</text>
+  <text x="66" y="209" fill="#D4DDF0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">One config. Any model.</text><text x="66" y="241" fill="#D4DDF0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">Reproducible results.</text>
+  <text x="66" y="281" fill="#8E9DBA" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Evaluate generated videos without coupling to model code.</text>
+  <g transform="translate(66 326)">
+    <rect width="112" height="34" rx="17" fill="#17243C" stroke="#314666"/><text x="56" y="22" text-anchor="middle" fill="#D8E6F6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".65">11 METRICS</text>
+    <rect x="122" width="139" height="34" rx="17" fill="#17243C" stroke="#314666"/><text x="191.5" y="22" text-anchor="middle" fill="#D8E6F6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".55">STRICT PAIRING</text>
+    <rect x="271" width="151" height="34" rx="17" fill="#17243C" stroke="#314666"/><text x="346.5" y="22" text-anchor="middle" fill="#D8E6F6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".45">NO AUTO-DOWNLOAD</text>
+  </g>
+  <g transform="translate(650 79)">
+    <text x="0" y="0" fill="#93A2C0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">FROM MODEL OUTPUTS</text><text x="427" y="0" fill="#93A2C0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">TO AUDITABLE SCORES</text>
+    <g transform="translate(0 29)">
+      <rect width="152" height="207" rx="17" fill="#121D33" stroke="#34425F"/><text x="16" y="25" fill="#B5C1D8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1">GENERATED FRAMES</text>
+      <rect x="16" y="43" width="120" height="42" rx="8" fill="url(#frameA)"/><path d="M16 76c18-21 34-13 51-25 15 13 30 16 69-3v29H16Z" fill="#142D48" fill-opacity=".75"/><circle cx="111" cy="56" r="7" fill="#F5D28B" fill-opacity=".92"/>
+      <rect x="16" y="94" width="120" height="42" rx="8" fill="url(#frameB)"/><path d="M16 127c22-22 36-12 55-26 17 14 35 16 65-1v28H16Z" fill="#282A58" fill-opacity=".8"/><circle cx="111" cy="107" r="7" fill="#F5D28B" fill-opacity=".92"/>
+      <rect x="16" y="145" width="120" height="42" rx="8" fill="url(#frameC)"/><path d="M16 178c18-21 34-13 51-25 15 13 30 16 69-3v29H16Z" fill="#44314C" fill-opacity=".78"/><circle cx="111" cy="158" r="7" fill="#F5D28B" fill-opacity=".92"/>
+    </g>
+    <path d="M818 132h42" stroke="#7182AB" stroke-width="1.5" stroke-dasharray="4 5"/><path d="m854 126 7 6-7 6" stroke="#7182AB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(868 84)">
+      <circle cx="67" cy="67" r="62" fill="#151C36" stroke="#6373B2" stroke-opacity=".8"/><circle cx="67" cy="67" r="47" stroke="url(#accent)" stroke-width="2" stroke-dasharray="42 12 30 12"/><circle cx="67" cy="67" r="32" fill="#10182A" stroke="#344663"/><path d="m60 51 22 16-22 16V51Z" fill="url(#accent)"/>
+      <text x="67" y="151" text-anchor="middle" fill="#CAD5EB" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.3">PROTOCOL</text><text x="67" y="166" text-anchor="middle" fill="#CAD5EB" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1.3">+ METRICS</text>
+    </g>
+    <path d="M1005 151h35" stroke="#7182AB" stroke-width="1.5" stroke-dasharray="4 5"/><path d="m1034 145 7 6-7 6" stroke="#7182AB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(1052 29)">
+      <rect width="164" height="45" rx="11" fill="#151F35" stroke="#31415E"/><circle cx="17" cy="22.5" r="4" fill="#66E3D0"/><text x="31" y="27" fill="#E0E8F7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="650">IMAGE · FR / NR</text>
+      <rect y="54" width="164" height="45" rx="11" fill="#151F35" stroke="#31415E"/><circle cx="17" cy="76.5" r="4" fill="#A796FF"/><text x="31" y="81" fill="#E0E8F7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="650">VIDEO QUALITY</text>
+      <rect y="108" width="164" height="45" rx="11" fill="#151F35" stroke="#31415E"/><circle cx="17" cy="130.5" r="4" fill="#FFB97A"/><text x="31" y="135" fill="#E0E8F7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="650">TEMPORAL</text>
+      <rect y="162" width="164" height="45" rx="11" fill="#151F35" stroke="#31415E"/><circle cx="17" cy="184.5" r="4" fill="#7EA7FF"/><text x="31" y="189" fill="#E0E8F7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="650">JSON · CSV · MD</text>
+    </g>
+  </g>
+</svg>
